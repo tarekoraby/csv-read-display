@@ -10,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.shared.util.SharedUtil;
 
 import java.io.IOException;
@@ -26,9 +27,7 @@ public class CSVView extends VerticalLayout {
         MemoryBuffer buffer = new MemoryBuffer();
         Upload upload = new Upload(buffer);
         upload.setAcceptedFileTypes(".csv");
-        upload.addSucceededListener(e -> {
-            displayCsv(buffer.getInputStream());
-        });
+        upload.addSucceededListener(e -> displayCsv(buffer.getInputStream()));
 
         add(upload, grid);
     }
