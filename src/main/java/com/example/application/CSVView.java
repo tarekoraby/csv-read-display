@@ -18,6 +18,7 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 @Route("csv")
+@RouteAlias("")
 public class CSVView extends VerticalLayout {
     private Grid<String[]> grid = new Grid<>();
 
